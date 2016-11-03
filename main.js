@@ -82,8 +82,14 @@ function parseCategory(page) {
   }
 }
 
-function sayHi() {
-  return "Hi";
+function doStuff() {
+  var thingObj = parseCategory(myPage);
+  var nameEl = document.querySelector('p.name');
+  var linkEl = document.querySelector('p.link');
+  nameEl.innerHTML = thingObj.name;
+  linkEl.innerHTML = thingObj.link;
 }
-// console.log(parseCategory(myPage));
+
+doStuff();
+
 console.log("wtf is going on?!?!");
