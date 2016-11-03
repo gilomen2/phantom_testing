@@ -90,6 +90,6 @@ function doStuff() {
   linkEl.innerHTML = thingObj.link;
 }
 
-doStuff();
+window.setTimeout(doStuff, 1000);
 
 console.log("wtf is going on?!?!");
