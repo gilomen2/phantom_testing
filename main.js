@@ -86,4 +86,4 @@ function sayHi() {
   return "Hi";
 }
 // console.log(parseCategory(myPage));
-console.log("wtf");
+console.log("wtf is going on?!?!");
