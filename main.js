@@ -48,20 +48,25 @@ var myPage = {
   "cloudinaryImageFormat": "jpg"
 }
 var myArray = [];
-function hasMethod() {
-  return myArray.filter;
+
+function hasMethod(item) {
+  return item.filter;
 }
 
 function parseCategory(page) {
+  function startsWith(string, searchString, position) {
+    position = position || 0;
+    return string.substr(position, searchString.length) === searchString;
+  }
   if (page) {
     if (!page.metaTags) {
       return;
     } else {
       let categoryMetaTags = page.metaTags.filter((metaTag) => {
-        return metaTag.startsWith('onespot-cat-name');
+        return startsWith(metaTag, 'onespot-cat-name');
       });
       let linkMetaTags = page.metaTags.filter((metaTag) => {
-        return metaTag.startsWith('onespot-cat-slug');
+        return startsWith(metaTag, 'onespot-cat-slug');
       });
       let categoryMetaTag = categoryMetaTags.length > 0 ? categoryMetaTags[0] : '';
       let linkMetaTag = linkMetaTags.length > 0 ? linkMetaTags[0] : '';
@@ -86,8 +91,10 @@ function doStuff() {
   var thingObj = parseCategory(myPage);
   var nameEl = document.querySelector('p.name');
   var linkEl = document.querySelector('p.link');
+  var hasMethodEl = document.querySelector('p.hasMethod');
   nameEl.innerHTML = thingObj.name;
   linkEl.innerHTML = thingObj.link;
+  hasMethodEl.innerHTML = hasMethod(myArray);
 }
 
 window.setTimeout(doStuff, 1000);
