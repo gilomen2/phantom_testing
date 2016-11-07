@@ -82,10 +82,12 @@ var myPage = {
   "cloudinaryImageId": "b9cfe1321865e31aebae83bc3bd84937",
   "cloudinaryImageFormat": "jpg"
 }
-var myArray = [];
+var myArray = ["wtf", "is", "going", "on"];
 
 function hasMethod(item) {
-  return item.filter;
+  return item.filter(function(x){
+    return x.length > 2;
+  });
 }
 
 function parseCategory(page) {
