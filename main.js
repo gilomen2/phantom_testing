@@ -97,6 +97,7 @@ function doStuff() {
   hasMethodEl.innerHTML = hasMethod(myArray);
 }
 
-window.setTimeout(doStuff, 1000);
+// window.setTimeout(doStuff, 1000);
+doStuff();
 
 console.log("wtf is going on?!?!");
