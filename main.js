@@ -128,9 +128,11 @@ function doStuff() {
   var thingObj = parseCategory(myPage);
   var nameEl = document.querySelector('p.name');
   var linkEl = document.querySelector('p.link');
+  var controlContent = document.querySelector('p.control');
   var hasMethodEl = document.querySelector('p.hasMethod');
   nameEl.innerHTML = thingObj.name;
   linkEl.innerHTML = thingObj.link;
+  controlContent.innerHTML = 'Control Group Content';
   hasMethodEl.innerHTML = hasMethod(myArray);
 }
 
